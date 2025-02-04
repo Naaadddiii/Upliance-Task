@@ -1,50 +1,82 @@
-# React + TypeScript + Vite
+# Dashboard Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
 
-Currently, two official plugins are available:
+This is a simple **Dashboard Application** built with **React & TypeScript**, featuring multiple interactive components such as:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- A **Counter** with smooth animations.
+- A **Rich Text Editor** that saves content in `localStorage`.
+- A **Name and ID Form** that generates a unique ID and stores user input.
+- A **Contact Details Form** that captures email, phone, and address information.
 
-## Expanding the ESLint configuration
+The application uses **Material UI** for styling the forms and **Tailwind CSS** for overall layout design.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+---
 
-- Configure the top-level `parserOptions` property like this:
+## Features
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+### 🔹 Counter Component
+
+- Increases or decreases the count with animation.
+- Background color and height change dynamically based on the count.
+- Uses `useState` and `useSpring` from `react-spring` for smooth effects.
+
+### 🔹 Rich Text Editor
+
+- Built using `react-quill`.
+- Supports **bold, italic, underline, lists, and headers**.
+- Automatically saves content to `localStorage` to retain text between sessions.
+
+### 🔹 Name and ID Form
+
+- Allows users to enter their **name**.
+- Generates a unique **ID** if one is not provided.
+- Stores data in `localStorage` for persistence.
+
+### 🔹 Contact Details Form
+
+- Captures user’s **email, phone number, and address**.
+- Saves input data in `localStorage`.
+- Updates existing stored data without overriding other fields.
+
+---
+
+## Installation
+
+### 📌 Prerequisites
+
+Ensure you have the following installed:
+
+- [Node.js](https://nodejs.org/) (>=14.x)
+- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
+
+### 🔧 Steps to Run the Project
+
+```sh
+# Clone the repository
+git clone https://github.com/Naaadddiii/Upliance-Task.git
+
+# Navigate to the project folder
+cd task-app
+
+# Install dependencies
+npm install   # or yarn install
+
+# Start the development server
+npm run dev   # or yarn dev
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+The application will be available at `http://localhost:5173/`
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+---
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## Tech Stack 🛠️
+
+- **React & TypeScript** - Component-based UI development
+- **Tailwind CSS** - Styling & Layout
+- **Material UI** - Form Components
+- **React Quill** - Rich Text Editing
+- **React Spring** - Animations
+- **LocalStorage** - Persistent data storage
+
+---
